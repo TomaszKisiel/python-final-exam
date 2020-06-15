@@ -1,6 +1,3 @@
-import sys
-arr = sys.argv[1].split(',')
-
 def quicksort( arr ):
     pivot = len( arr )
 
@@ -20,12 +17,9 @@ def quicksort( arr ):
     arr[0] = arr[current_position]
     arr[current_position] = temp
 
-    left = sort( arr[0:current_position] )
-    right = sort( arr[current_position+1:pivot])
+    left = quicksort( arr[0:current_position] )
+    right = quicksort( arr[current_position+1:pivot])
 
     arr = left + [arr[current_position]] + right
 
     return arr
-
-print( arr )
-print( quicksort( arr ) )
