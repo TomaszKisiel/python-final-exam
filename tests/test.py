@@ -9,15 +9,18 @@ class colors:
     UNDERLINE = '\033[4m'
 
 def test( func, input, output ):
-    print(f"{colors.OKBLUE}TEST BEGINING WITH:{colors.ENDC}")
-    print("\tINPUT: {}".format(input))
-    print("\tCORRECT OUTPUT: {}".format(output))
+    prompt = ">"
 
-    result = func(input)
-    print("\tFUNCTION RETURNED: {}".format(result))
+    print()
+    print(f"{prompt} {colors.OKBLUE}TEST BEGINING WITH:{colors.ENDC}")
+    print(f"{prompt}   INPUT: {input}")
+    print(f"{prompt}   CORRECT OUTPUT: {output}")
+
+    result = func( *input )
+    print(f"{prompt}   FUNCTION RETURNED: {result}")
 
     if result == output:
-        print(f"{colors.OKBLUE}TEST RESULT:{colors.ENDC} {colors.OKGREEN}CORRECT{colors.ENDC}")
+        print(f"{prompt} {colors.OKBLUE}TEST RESULT:{colors.ENDC} {colors.OKGREEN}CORRECT{colors.ENDC}")
     else:
-        print(f"{colors.OKBLUE}TEST RESULT:{colors.ENDC} {colors.FAIL}INCORRECT{colors.ENDC}")
+        print(f"{prompt} {colors.OKBLUE}TEST RESULT:{colors.ENDC} {colors.FAIL}INCORRECT{colors.ENDC}")
     print()
