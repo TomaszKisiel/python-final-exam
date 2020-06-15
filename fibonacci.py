@@ -1,4 +1,3 @@
-
 def generate( length ):
     prev = 1
     sum = 1
